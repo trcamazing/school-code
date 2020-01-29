@@ -4,48 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>code.school ITI examples</title>
+    <title>Document</title>
+    <!--<link rel="stylesheet" type="text/css" href=" ./style.css"-->
     <style>
         body {
             font-size: 16px;
-            padding: 20px;
+            padding: 0px;
         }
-        a.lesson {
-            position: relative;
-            display: inline-block;
-            padding: 8px 16px;
-            margin: 4px 0px;
-            border-left: #505050 solid 4px;
-            color: #505050;
-            background: #50505015;
-        }
-        a.lesson:hover {
-            background-color: #505050;
-            color: #ffffff;
-            border-left-color: #c0c0c0;
-            text-decoration: none;
-            transition: 1s background-color, 
-                1s color, 
-                1s border-left-color;
-        }
-    </style>
+       .short-info {
+           position: relative;
+           display: grid;
+           overflow: hidden;
+           height: 100vh;
+           margin: 0px;
+           grid-template-columns: 1fr 1.7fr;
+           grid-template-rows: 0.25fr 1fr 0.5fr;
+           grid-template-areas:
+                    "name links"
+                    "about links"
+                    "about photo";
+       }    
+       .photo-block {           
+           grid-area: photo;
+           background: red;
+       }
+       .name-block {
+           grid-area: name;
+           background: rgb(255, 115, 1);
+       }
+       .about-me-block {
+           grid-area: about;
+           background: rgb(102, 255, 1);
+       }
+       .links-block {
+           grid-area: links;
+           background: yellow;
+       }
+    </style> 
 </head>
 <body>
-    <h1>trcamazing</h1>
-    <h2>Lessons examples for code.school ITI</h2>
-    <a class="lesson" href="./lesson_tags/index.html" title=" ">Ознакомление с некоторыми основными тегами</a>
-    <br>
-    <a class="lesson" href="./lesson_text/index.html" title=" ">Стилизация текста</a>
-    <br>
-    <a class="lesson" href="./lesson_links/index.html" title=" ">Ссылки</a>
-    <br>
-    <a class="lesson" href="./lesson_js/index.html" title=" ">JavaScript</a>
-    <br>
-    <a class="lesson" href="./lesson_artbox/index.html" title=" ">X-tree</a>
-    <br>
-    <a class="lesson" href="./lesson_x0/index.html" title=" ">TicTacToe game</a>
-    <br>
-    <a class="lesson" href="./lesson_transformations/index.html" title=" ">Transformations</a>
-    <br>
+     <div id="pagel" class="short-info">
+       <div class="photo-block"></div>
+       <div class="name-block"></div>   
+       <div class="about-me-block"></div>
+       <div class="links-block"></div>
+    </div>
 </body>
 </html>
