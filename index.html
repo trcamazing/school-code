@@ -8,9 +8,16 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
     <style>
        body {
-       font-size: 16px;
-       background-color: rgb(43, 43, 43);
-       height: 1300px;
+        background: rgba(255,237,97,1);
+        background: -moz-linear-gradient(left, rgba(255,237,97,1) 0%, rgba(255,63,10,1) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,237,97,1)), color-stop(100%, rgba(255,63,10,1)));
+        background: -webkit-linear-gradient(left, rgba(255,237,97,1) 0%, rgba(255,63,10,1) 100%);
+        background: -o-linear-gradient(left, rgba(255,237,97,1) 0%, rgba(255,63,10,1) 100%);
+        background: -ms-linear-gradient(left, rgba(255,237,97,1) 0%, rgba(255,63,10,1) 100%);
+        background: linear-gradient(to right, rgba(255,237,97,1) 0%, rgba(255,63,10,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffed61', endColorstr='#ff3f0a', GradientType=1 ) no-repeat;
+        height: 1300px;
+        font-size: 18px;
 }
 .short-info {
     position: relative;
@@ -29,7 +36,7 @@
 .photo-block {
     display: flex;
     grid-area: photo;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     padding: 16px;
     background: #6e6e6e55;
@@ -51,10 +58,10 @@
 }
 .name-block {
     position: relative;
-    justify-content: end;
+    justify-content: center;
     grid-area: name;
     display: flex;
-    align-items: flex-end;
+    align-items:center;
     padding: 2px;
     font-size: 200%;
     background: #86868655;
@@ -69,8 +76,8 @@
     align-items: flex-start;
     padding: 16px;
     font-size: 120%;
-    background: #2424249b;
-    color: #eeeeeec7;
+    background: #2b2b2b9b;
+    color: #dbdbdbc7;
     transition-duration: 2s;
 }
 .about-me-block:hover {
@@ -106,7 +113,17 @@
 .links-block>a.link-yt {
     background: url(https://pluspng.com/img-png/youtube-png-youtube-icon-256.png) no-repeat 50% / contain
 }
-@media (max-width: 350px) {
+:root {
+--color-bg:
+--color-primary:
+--color-secondary:
+--color-accent:#8AA1B1;
+--color-text-dark:#0A0A0A;
+--color-text-light:#323232;
+;
+
+}
+@media (max-width: 450px) {
     .photo-image {transform: scale(0.2);
     height: 150px;
     width:150px;
@@ -119,14 +136,13 @@
     background-size: cover;
     background-repeat: no-repeat;
     transform: rotate(0deg);
-    transition-duration: 2s
-    ;
+    transition-duration: 2s;
 }
 .short-info {
     position: relative;
     display: grid;
     grid-template-columns:1fr;
-    grid-template-rows: unset;
+    grid-template-rows: 0fr 0.2fr 0.9fr 0.5fr;
     grid-template-areas:
        "photo"
         "name"
@@ -140,17 +156,29 @@
 }
 .name-block {
     position: relative;
-    justify-content: end;
+    justify-content: center;
     grid-area: name;
     display: flex;
-    align-items: flex-end;
-    padding: 2px;
+    align-items: center;
     font-size: 200%;
     background: #44444488;
     color: #6e6e6e91;
     align-items:center;
     text-orientation:sideways;
-    transition-duration: 5s;}}
+    transition-duration: 5s;}
+
+.photo-block {
+    display: flex;
+    grid-area: photo;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    background: #6e6e6e55;
+    height:170px
+}
+
+
+}
 
     </style>
 </head>
@@ -161,7 +189,13 @@
         </div>
         <div class="name-block">trcamazing             
         </div>
-        <div class="about-me-block">текст</div>
+        <div class="about-me-block">
+        <p1>fdfdfdfdfdfdf</p1>
+        <p2>efsdfsdfs</p2>
+        
+        
+        
+        </div>
         <div class="links-block">
           <a href="https://www.youtube.com/channel/UCxoEgaSaDxIZNXoli9MCS4A" class="link-yt"></a>
           <a href="http://vk.com/trcamazing" class="link-vk"></a>
@@ -171,3 +205,86 @@
 
 </body>
 </html>
+<style>
+        #mydiv {
+          position: absolute;
+          z-index: 9;
+          background-color: #f1f1f100;
+          text-align: center;
+          border: 1px solid #d3d3d300;
+          transition-duration: 2s;
+        }
+        
+        #mydivheader {
+          padding: 10px;
+          cursor: move;
+          z-index: 10;
+          background-color: rgba(33, 149, 243, 0.466);
+          color: rgba(255, 255, 255, 0.445);
+          transition-duration: 2s;
+        }
+        #mydiv:hover {
+          position: absolute;
+          z-index: 9;
+          background-color: #f1f1f1;
+          text-align: center;
+          border: 1px solid #d3d3d3;
+          transition-duration: 2s;
+        }
+        
+        #mydivheader:hover {
+          padding: 10px;
+          cursor: move;
+          z-index: 10;
+          background-color: rgb(33, 149, 243);
+          color: rgb(255, 255, 255);
+          transition-duration: 2s;
+        }
+        </style>
+        <body>
+        <div id="mydiv">
+          <div id="mydivheader">GrayTrChi.aternos.me</div>
+
+        </div>
+        
+        <script>
+        dragElement(document.getElementById("mydiv"));
+        
+        function dragElement(elmnt) {
+          var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+          if (document.getElementById(elmnt.id + "header")) {
+            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+          } else {
+            elmnt.onmousedown = dragMouseDown;
+          }
+        
+          function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos3 = e.clientX;
+            pos4 = 0
+            document.onmouseup = closeDragElement;
+            document.onmousemove = elementDrag;
+          }
+        
+          function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            pos1 = pos3 - e.clientX;
+            pos2 = 0;
+            pos3 = e.clientX;
+            pos4 = 0;
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+          }
+        
+          function closeDragElement() {
+            document.onmouseup = null;
+            document.onmousemove = null;
+          }
+        }
+        </script>
+        
+        </body>
+        </html>
+        
