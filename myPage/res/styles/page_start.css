@@ -101,7 +101,7 @@
 --color-text-light:#323232;
 ;
 }
-@media (max-width: 450px) {
+@media (max-width: 500px) {
     .photo-image {transform: scale(0.2);
     height: 150px;
     width:150px;
